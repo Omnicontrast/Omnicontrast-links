@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marco Fabrizi | Omnicontrast</title>
+  <title>Marco Fabrizi | Official Links</title>
   
   <!-- Meta Pixel Code -->
   <script>
@@ -18,193 +18,312 @@
     fbq('init', 'INSERISCI_QUI_IL_TUO_PIXEL_ID');
     fbq('track', 'PageView');
   </script>
-  <!-- End Meta Pixel Code -->
 
   <style>
     :root {
-      --bg-color: #0a0a0a;
-      --card-bg: #121212;
-      --card-hover: #181818;
-      --border-color: #222222;
-      --text-main: #e5e5e5;
-      --text-muted: #888888;
-      --accent: #ffffff;
+      --bg-color: #000000;
+      --card-bg: #1c1c1e;
+      --card-hover: #2c2c2e;
+      --text-main: #ffffff;
+      --text-muted: #8e8e93;
+      --accent: #fa233b;
+      --border-radius: 12px;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: var(--bg-color);
       color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      margin: 0;
-      padding: 40px 20px;
-      box-sizing: border-box;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .brand-title {
-      font-size: 1.1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 400;
-      margin: 0 0 8px 0;
-      color: var(--accent);
-    }
-
-    .brand-subtitle {
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-      margin: 0;
+      padding-bottom: 60px;
     }
 
     .container {
       width: 100%;
-      max-width: 380px;
+      max-width: 420px;
+      padding: 0 16px;
+    }
+
+    .hero-header {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 100%), 
+                  url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000') center/cover no-repeat;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
     }
 
-    /* Accordion / Dropdown Musicale */
-    details.music-card {
+    .artist-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .artist-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .social-bar {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .social-pill {
       background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      overflow: hidden;
-      transition: border-color 0.2s ease;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: background 0.2s;
     }
 
-    details.music-card[open] {
-      border-color: #444444;
+    .social-pill:hover { background: var(--card-hover); }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 24px 0 12px 4px;
+      letter-spacing: -0.3px;
+    }
+
+    details.track-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: background 0.2s;
     }
 
     summary {
-      padding: 16px;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       cursor: pointer;
       list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       user-select: none;
     }
 
-    summary::-webkit-details-marker {
-      display: none;
+    summary::-webkit-details-marker { display: none; }
+
+    .track-cover {
+      width: 52px;
+      height: 52px;
+      border-radius: 6px;
+      object-fit: cover;
+      background: #2c2c2e;
     }
 
-    summary::after {
-      content: "+";
-      font-size: 1rem;
-      color: var(--text-muted);
-    }
-
-    details[open] summary::after {
-      content: "−";
-    }
-
-    .stream-options {
+    .track-details {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      background: #0d0d0d;
-      border-top: 1px solid var(--border-color);
-      padding: 8px 0;
+      gap: 2px;
     }
 
-    .stream-link {
-      padding: 12px 16px;
+    .track-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .track-sub {
+      font-size: 0.75rem;
       color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
+    }
+
+    .more-icon {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      padding-right: 4px;
+    }
+
+    .stream-menu {
+      background: #141416;
+      border-top: 1px solid #2a2a2c;
+      padding: 6px 12px;
+    }
+
+    .stream-btn {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .stream-link:hover {
-      background: var(--card-hover);
-      color: var(--accent);
-    }
-
-    /* Bottoni Standard */
-    .direct-link {
-      display: block;
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 16px;
+      padding: 12px 4px;
       color: var(--text-main);
       text-decoration: none;
-      text-align: center;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 4px;
-      transition: all 0.2s ease;
+      font-size: 0.8rem;
+      font-weight: 500;
     }
 
-    .direct-link:hover {
-      border-color: #444444;
-      background: var(--card-hover);
+    .stream-btn span.action {
       color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
     }
 
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 16px 0 4px 4px;
+    .direct-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      transition: background 0.2s;
+    }
+
+    .direct-card:hover { background: var(--card-hover); }
+
+    .direct-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #2c2c2e;
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1 class="brand-title">Marco Fabrizi</h1>
-    <p class="brand-subtitle">Composer & Sound Designer</p>
+  <div class="hero-header">
+    <h1 class="artist-name">Marco Fabrizi</h1>
+    <p class="artist-subtitle">Composer & Sound Designer</p>
+    
+    <div class="social-bar">
+      <a href="https://instagram.com/marcofabrizi_" target="_blank" class="social-pill">Instagram</a>
+      <a href="https://youtube.com" target="_blank" class="social-pill">YouTube</a>
+      <a href="https://spotify.com" target="_blank" class="social-pill">Spotify</a>
+    </div>
   </div>
 
   <div class="container">
-    
-    <!-- Sezione Rilasci Musicali Espandibili -->
-    <div class="section-label">Latest Releases</div>
 
-    <details class="music-card">
-      <summary>Latest Single / Album Title</summary>
-      <div class="stream-options">
-        <a href="https://spotify.com" target="_blank" class="stream-link">
-          <span>Spotify</span> <span>Listen ↗</span>
-        </a>
-        <a href="https://apple.com" target="_blank" class="stream-link">
-          <span>Apple Music</span> <span>Listen ↗</span>
-        </a>
-        <a href="https://omnicontrast.bandcamp.com" target="_blank" class="stream-link">
-          <span>Bandcamp</span> <span>Buy / Stream ↗</span>
-        </a>
-        <a href="https://youtube.com" target="_blank" class="stream-link">
-          <span>YouTube Visualizer</span> <span>Watch ↗</span>
+    <!-- IN EVIDENZA -->
+    <h2 class="section-title">In Evidenza</h2>
+    
+    <details class="track-card">
+      <summary>
+        <div class="track-details">
+          <span class="track-title">Il Rifiuto</span>
+          <span class="track-sub">Original Motion Picture Soundtrack · Marco Fabrizi</span>
+        </div>
+        <span class="more-icon">⋮</span>
+      </summary>
+      <div class="stream-menu">
+        <a href="https://song.link/ilrifiuto" target="_blank" class="stream-btn">
+          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
         </a>
       </div>
     </details>
 
-    <!-- Sezione Hub & B2B -->
-    <div class="section-label">Ecosystem & Studio</div>
+    <!-- DISCOGRAPHY -->
+    <h2 class="section-title">Discography</h2>
 
-    <a href="https://omnicontrast.com" class="direct-link">Official Hub</a>
-    <a href="https://omnicontrast.com/#kits" class="direct-link">Cinematic Sound Kits</a>
-    <a href="https://omnicontrast.com/#scoring" class="direct-link">Custom Scoring Portfolio</a>
+    <details class="track-card">
+      <summary>
+        <div class="track-details">
+          <span class="track-title">No Need to Know</span>
+          <span class="track-sub">Single · Marco Fabrizi, pearl moth</span>
+        </div>
+        <span class="more-icon">⋮</span>
+      </summary>
+      <div class="stream-menu">
+        <a href="https://song.link/noneedtoknow" target="_blank" class="stream-btn">
+          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+        </a>
+      </div>
+    </details>
+
+    <!-- SOUNDTRACKS -->
+    <h2 class="section-title">Soundtracks</h2>
+
+    <details class="track-card">
+      <summary>
+        <div class="track-details">
+          <span class="track-title">Everything is Fine</span>
+          <span class="track-sub">Original Motion Picture Soundtrack · Marco Fabrizi</span>
+        </div>
+        <span class="more-icon">⋮</span>
+      </summary>
+      <div class="stream-menu">
+        <a href="https://album.link/everythingisfine" target="_blank" class="stream-btn">
+          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+        </a>
+      </div>
+    </details>
+
+    <details class="track-card">
+      <summary>
+        <div class="track-details">
+          <span class="track-title">Il Rifiuto</span>
+          <span class="track-sub">Original Motion Picture Soundtrack · Marco Fabrizi</span>
+        </div>
+        <span class="more-icon">⋮</span>
+      </summary>
+      <div class="stream-menu">
+        <a href="https://song.link/ilrifiuto" target="_blank" class="stream-btn">
+          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+        </a>
+      </div>
+    </details>
+
+    <details class="track-card">
+      <summary>
+        <div class="track-details">
+          <span class="track-title">La Teoria del Vuoto</span>
+          <span class="track-sub">Original Motion Picture Soundtrack · Marco Fabrizi</span>
+        </div>
+        <span class="more-icon">⋮</span>
+      </summary>
+      <div class="stream-menu">
+        <a href="https://album.link/lateoriadelvuoto" target="_blank" class="stream-btn">
+          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+        </a>
+      </div>
+    </details>
+
+    <!-- CREDITS & STUDIO -->
+    <h2 class="section-title">Credits & Studio</h2>
+
+    <a href="https://omnicontrast.com" class="direct-card" target="_blank">
+      <div class="track-details">
+        <span class="track-title">Omnicontrast Official Hub</span>
+        <span class="track-sub">Sound Design & Cinematic Kits</span>
+      </div>
+    </a>
+
+    <a href="https://muso.ai" class="direct-card" target="_blank">
+      <div class="track-details">
+        <span class="track-title">Marco Fabrizi | Muso.ai</span>
+        <span class="track-sub">Verified Discography Credits</span>
+      </div>
+    </a>
+
+    <a href="https://imdb.com" class="direct-card" target="_blank">
+      <div class="track-details">
+        <span class="track-title">Marco Fabrizi | IMDb</span>
+        <span class="track-sub">Film & Media Scoring Filmography</span>
+      </div>
+    </a>
 
   </div>
 
