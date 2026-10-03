@@ -113,10 +113,10 @@
     }
 
     summary {
-      padding: 12px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
       cursor: pointer;
       list-style: none;
       user-select: none;
@@ -124,23 +124,14 @@
 
     summary::-webkit-details-marker { display: none; }
 
-    .track-cover {
-      width: 52px;
-      height: 52px;
-      border-radius: 6px;
-      object-fit: cover;
-      background: #2c2c2e;
-    }
-
     .track-details {
-      flex: 1;
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
 
     .track-title {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
     }
 
@@ -152,36 +143,40 @@
     .more-icon {
       color: var(--text-muted);
       font-size: 1.2rem;
-      padding-right: 4px;
     }
 
     .stream-menu {
       background: #141416;
       border-top: 1px solid #2a2a2c;
-      padding: 6px 12px;
+      padding: 4px 16px;
     }
 
     .stream-btn {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 4px;
+      padding: 12px 0;
+      border-bottom: 1px solid #222225;
       color: var(--text-main);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 500;
+    }
+
+    .stream-btn:last-child {
+      border-bottom: none;
     }
 
     .stream-btn span.action {
       color: var(--accent);
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
     }
 
     .direct-card {
       background: var(--card-bg);
       border-radius: var(--border-radius);
-      padding: 12px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -192,14 +187,6 @@
     }
 
     .direct-card:hover { background: var(--card-hover); }
-
-    .direct-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      object-fit: cover;
-      background: #2c2c2e;
-    }
   </style>
 </head>
 <body>
@@ -224,13 +211,25 @@
       <summary>
         <div class="track-details">
           <span class="track-title">Il Rifiuto</span>
-          <span class="track-sub">Original Motion Picture Soundtrack · Marco Fabrizi</span>
+          <span class="track-sub">Original Motion Picture Soundtrack</span>
         </div>
-        <span class="more-icon">⋮</span>
+        <span class="more-icon">▾</span>
       </summary>
       <div class="stream-menu">
+        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
+          <span>Spotify</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://music.apple.com" target="_blank" class="stream-btn">
+          <span>Apple Music</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://tidal.com" target="_blank" class="stream-btn">
+          <span>Tidal</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://music.amazon.com" target="_blank" class="stream-btn">
+          <span>Amazon Music</span> <span class="action">Play ↗</span>
+        </a>
         <a href="https://song.link/ilrifiuto" target="_blank" class="stream-btn">
-          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+          <span>All Platforms (Song.link)</span> <span class="action">Open ↗</span>
         </a>
       </div>
     </details>
@@ -242,13 +241,25 @@
       <summary>
         <div class="track-details">
           <span class="track-title">No Need to Know</span>
-          <span class="track-sub">Single · Marco Fabrizi, pearl moth</span>
+          <span class="track-sub">Single · feat. pearl moth</span>
         </div>
-        <span class="more-icon">⋮</span>
+        <span class="more-icon">▾</span>
       </summary>
       <div class="stream-menu">
+        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
+          <span>Spotify</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://music.apple.com" target="_blank" class="stream-btn">
+          <span>Apple Music</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://tidal.com" target="_blank" class="stream-btn">
+          <span>Tidal</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://music.amazon.com" target="_blank" class="stream-btn">
+          <span>Amazon Music</span> <span class="action">Play ↗</span>
+        </a>
         <a href="https://song.link/noneedtoknow" target="_blank" class="stream-btn">
-          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+          <span>All Platforms (Song.link)</span> <span class="action">Open ↗</span>
         </a>
       </div>
     </details>
@@ -260,13 +271,19 @@
       <summary>
         <div class="track-details">
           <span class="track-title">Everything is Fine</span>
-          <span class="track-sub">Original Motion Picture Soundtrack · Marco Fabrizi</span>
+          <span class="track-sub">Original Motion Picture Soundtrack</span>
         </div>
-        <span class="more-icon">⋮</span>
+        <span class="more-icon">▾</span>
       </summary>
       <div class="stream-menu">
+        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
+          <span>Spotify</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://music.apple.com" target="_blank" class="stream-btn">
+          <span>Apple Music</span> <span class="action">Play ↗</span>
+        </a>
         <a href="https://album.link/everythingisfine" target="_blank" class="stream-btn">
-          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+          <span>All Platforms (Album.link)</span> <span class="action">Open ↗</span>
         </a>
       </div>
     </details>
@@ -275,13 +292,19 @@
       <summary>
         <div class="track-details">
           <span class="track-title">Il Rifiuto</span>
-          <span class="track-sub">Original Motion Picture Soundtrack · Marco Fabrizi</span>
+          <span class="track-sub">Original Motion Picture Soundtrack</span>
         </div>
-        <span class="more-icon">⋮</span>
+        <span class="more-icon">▾</span>
       </summary>
       <div class="stream-menu">
+        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
+          <span>Spotify</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://music.apple.com" target="_blank" class="stream-btn">
+          <span>Apple Music</span> <span class="action">Play ↗</span>
+        </a>
         <a href="https://song.link/ilrifiuto" target="_blank" class="stream-btn">
-          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+          <span>All Platforms (Song.link)</span> <span class="action">Open ↗</span>
         </a>
       </div>
     </details>
@@ -290,13 +313,19 @@
       <summary>
         <div class="track-details">
           <span class="track-title">La Teoria del Vuoto</span>
-          <span class="track-sub">Original Motion Picture Soundtrack · Marco Fabrizi</span>
+          <span class="track-sub">Original Motion Picture Soundtrack</span>
         </div>
-        <span class="more-icon">⋮</span>
+        <span class="more-icon">▾</span>
       </summary>
       <div class="stream-menu">
+        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
+          <span>Spotify</span> <span class="action">Play ↗</span>
+        </a>
+        <a href="https://music.apple.com" target="_blank" class="stream-btn">
+          <span>Apple Music</span> <span class="action">Play ↗</span>
+        </a>
         <a href="https://album.link/lateoriadelvuoto" target="_blank" class="stream-btn">
-          <span>All Streaming Services</span> <span class="action">Listen ↗</span>
+          <span>All Platforms (Album.link)</span> <span class="action">Open ↗</span>
         </a>
       </div>
     </details>
