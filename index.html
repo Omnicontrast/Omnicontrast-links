@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marco Fabrizi | Omnicontrast</title>
+  
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'INSERISCI_QUI_IL_TUO_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root {
+      --bg-color: #0a0a0a;
+      --card-bg: #121212;
+      --card-hover: #181818;
+      --border-color: #222222;
+      --text-main: #e5e5e5;
+      --text-muted: #888888;
+      --accent: #ffffff;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .brand-title {
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin: 0 0 8px 0;
+      color: var(--accent);
+    }
+
+    .brand-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 380px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Accordion / Dropdown Musicale */
+    details.music-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    details.music-card[open] {
+      border-color: #444444;
+    }
+
+    summary {
+      padding: 16px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .stream-options {
+      display: flex;
+      flex-direction: column;
+      background: #0d0d0d;
+      border-top: 1px solid var(--border-color);
+      padding: 8px 0;
+    }
+
+    .stream-link {
+      padding: 12px 16px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .stream-link:hover {
+      background: var(--card-hover);
+      color: var(--accent);
+    }
+
+    /* Bottoni Standard */
+    .direct-link {
+      display: block;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 16px;
+      color: var(--text-main);
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .direct-link:hover {
+      border-color: #444444;
+      background: var(--card-hover);
+      color: var(--accent);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 16px 0 4px 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 class="brand-title">Marco Fabrizi</h1>
+    <p class="brand-subtitle">Composer & Sound Designer</p>
+  </div>
+
+  <div class="container">
+    
+    <!-- Sezione Rilasci Musicali Espandibili -->
+    <div class="section-label">Latest Releases</div>
+
+    <details class="music-card">
+      <summary>Latest Single / Album Title</summary>
+      <div class="stream-options">
+        <a href="https://spotify.com" target="_blank" class="stream-link">
+          <span>Spotify</span> <span>Listen ↗</span>
+        </a>
+        <a href="https://apple.com" target="_blank" class="stream-link">
+          <span>Apple Music</span> <span>Listen ↗</span>
+        </a>
+        <a href="https://omnicontrast.bandcamp.com" target="_blank" class="stream-link">
+          <span>Bandcamp</span> <span>Buy / Stream ↗</span>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="stream-link">
+          <span>YouTube Visualizer</span> <span>Watch ↗</span>
+        </a>
+      </div>
+    </details>
+
+    <!-- Sezione Hub & B2B -->
+    <div class="section-label">Ecosystem & Studio</div>
+
+    <a href="https://omnicontrast.com" class="direct-link">Official Hub</a>
+    <a href="https://omnicontrast.com/#kits" class="direct-link">Cinematic Sound Kits</a>
+    <a href="https://omnicontrast.com/#scoring" class="direct-link">Custom Scoring Portfolio</a>
+
+  </div>
+
+</body>
+</html>
