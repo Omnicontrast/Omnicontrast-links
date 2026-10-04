@@ -37,30 +37,27 @@ body {
 }
 
 /* ====================================================================
-   HERO HEADER - FULL BLEED REFACTOR
+   RESET SUPERIORE (ELIMINA STRISCIA NERA IN ALTO)
    ==================================================================== */
-html, body {
+html, body, #main-content {
   margin: 0 !important;
-  padding: 0 !important;
+  padding-top: 0 !important;
   width: 100%;
-  background-color: var(--bg-color);
+  background-color: #000000;
   overflow-x: hidden;
 }
 
-#main-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* ====================================================================
+   HERO HEADER (ALTEZZA AUMENTATA & TESTO SPOSTATO IN BASSO)
+   ==================================================================== */
 
 .hero-header {
   position: relative;
   width: 100%;
-  height: 440px; /* Altezza proporzionata come da reference */
+  height: 520px; /* Portato a 520px per spingere il testo più in basso sul nero */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Ancora testo e icone in fondo alla sfumatura */
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
   padding-bottom: 16px;
@@ -72,7 +69,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Si adatta all'altezza dell'header senza tagli sfasati */
+  height: 100%;
   z-index: 1;
 }
 
@@ -80,7 +77,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%; /* Mantiene visibile il volto evitando tagli superiori */
+  object-position: center top; /* Attacca la testa esattamente al bordo superiore dello schermo */
   display: block;
 }
 
@@ -94,7 +91,7 @@ html, body {
   background: linear-gradient(
     180deg, 
     rgba(0, 0, 0, 0) 0%, 
-    rgba(0, 0, 0, 0.2) 40%, 
+    rgba(0, 0, 0, 0.15) 35%, 
     rgba(0, 0, 0, 0.85) 75%, 
     #000000 100%
   );
@@ -108,7 +105,6 @@ html, body {
   padding: 0 16px;
   box-sizing: border-box;
 }
-
 
 .profile-pic {
   width: 120px;
