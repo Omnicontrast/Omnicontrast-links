@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ====================================================================
+       [NON TOCCARE] CONFIGURAZIONE HEAD, META-TAG E CSS ESTERNI
+       ==================================================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marco Fabrizi | Official Links</title>
-  
-  <!-- Meta Pixel Code -->
+
+  <!-- Collegamento ai file CSS dedicati nella cartella /css/ -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
+
+  <!-- Meta Pixel Code (Incolla il tuo ID numerico dove indicato) -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,343 +25,188 @@
     fbq('init', 'INSERISCI_QUI_IL_TUO_PIXEL_ID');
     fbq('track', 'PageView');
   </script>
-
-  <style>
-    :root {
-      --bg-color: #000000;
-      --card-bg: #1c1c1e;
-      --card-hover: #2c2c2e;
-      --text-main: #ffffff;
-      --text-muted: #8e8e93;
-      --accent: #fa233b;
-      --border-radius: 12px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding-bottom: 60px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 420px;
-      padding: 0 16px;
-    }
-
-    .hero-header {
-      width: 100%;
-      height: 220px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 100%), 
-                  url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      text-align: center;
-      padding-bottom: 16px;
-      margin-bottom: 16px;
-    }
-
-    .artist-name {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 4px;
-    }
-
-    .artist-subtitle {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-
-    .social-bar {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 12px;
-    }
-
-    .social-pill {
-      background: var(--card-bg);
-      color: var(--text-main);
-      text-decoration: none;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 20px;
-      transition: background 0.2s;
-    }
-
-    .social-pill:hover { background: var(--card-hover); }
-
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 24px 0 12px 4px;
-      letter-spacing: -0.3px;
-    }
-
-    details.track-card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      margin-bottom: 10px;
-      overflow: hidden;
-      transition: background 0.2s;
-    }
-
-    summary {
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      list-style: none;
-      user-select: none;
-    }
-
-    summary::-webkit-details-marker { display: none; }
-
-    .track-details {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .track-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .track-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .more-icon {
-      color: var(--text-muted);
-      font-size: 1.2rem;
-    }
-
-    .stream-menu {
-      background: #141416;
-      border-top: 1px solid #2a2a2c;
-      padding: 4px 16px;
-    }
-
-    .stream-btn {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid #222225;
-      color: var(--text-main);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .stream-btn:last-child {
-      border-bottom: none;
-    }
-
-    .stream-btn span.action {
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .direct-card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text-main);
-      margin-bottom: 10px;
-      transition: background 0.2s;
-    }
-
-    .direct-card:hover { background: var(--card-hover); }
-  </style>
 </head>
 <body>
 
-  <div class="hero-header">
-    <h1 class="artist-name">Marco Fabrizi</h1>
-    <p class="artist-subtitle">Composer & Sound Designer</p>
-    
-    <div class="social-bar">
-      <a href="https://instagram.com/marcofabrizi_" target="_blank" class="social-pill">Instagram</a>
-      <a href="https://youtube.com" target="_blank" class="social-pill">YouTube</a>
-      <a href="https://spotify.com" target="_blank" class="social-pill">Spotify</a>
-    </div>
+  <!-- ====================================================================
+       [NON TOCCARE] SPLASHSCREEN - ANIMAZIONE DI APERTURA
+       Controllato da css/animation.css. Mostra il logo in fade-in/fade-out
+       ==================================================================== -->
+  <div id="splash-screen">
+    <img src="assets/brand/logo-intro.png" alt="Omnicontrast" class="splash-logo">
   </div>
 
-  <div class="container">
 
-    <!-- IN EVIDENZA -->
-    <h2 class="section-title">In Evidenza</h2>
-    
-    <details class="track-card">
-      <summary>
-        <div class="track-details">
-          <span class="track-title">Il Rifiuto</span>
-          <span class="track-sub">Original Motion Picture Soundtrack</span>
+  <!-- ====================================================================
+       CONTENUTO PRINCIPALE (In dissolvenza automatica dopo lo splashscreen)
+       ==================================================================== -->
+  <div id="main-content">
+
+    <!-- ==================================================================
+         [MODIFICABILE] 1. HEADER (FOTO PROFILO, NOME, BIO ED ICONE SOCIAL)
+         ================================================================== -->
+    <header class="hero-header">
+      <!-- Immagine profilo caricata in assets/brand/ -->
+      <img src="assets/brand/profile.jpg" alt="Marco Fabrizi" class="profile-pic">
+      
+      <h1 class="artist-name">Marco Fabrizi</h1>
+      <p class="artist-subtitle">Composer & Sound Designer<br>Music built on contrast, moving from soft piano and bowed textures to dark electronics</p>
+
+      <!-- Riga icone social (File PNG caricati nella cartella assets/icons/) -->
+      <div class="social-row">
+        <!-- Modifica href="" con i link diretti ai tuoi profili -->
+        <a href="https://instagram.com/marcofabrizi_" target="_blank" class="social-icon-link" title="Instagram">
+          <img src="assets/icons/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://open.spotify.com" target="_blank" class="social-icon-link" title="Spotify">
+          <img src="assets/icons/spotify.png" alt="Spotify">
+        </a>
+        <a href="https://music.apple.com" target="_blank" class="social-icon-link" title="Apple Music">
+          <img src="assets/icons/apple.png" alt="Apple Music">
+        </a>
+        <a href="https://youtube.com" target="_blank" class="social-icon-link" title="YouTube">
+          <img src="assets/icons/youtube.png" alt="YouTube">
+        </a>
+        <a href="https://omnicontrast.bandcamp.com" target="_blank" class="social-icon-link" title="Bandcamp">
+          <img src="assets/icons/bandcamp.png" alt="Bandcamp">
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <!-- ================================================================
+           [MODIFICABILE] 2. SEZIONE: IN EVIDENZA (FEATURED RELEASE)
+           ================================================================ -->
+      <h2 class="section-title">Featured Release</h2>
+
+      <details class="track-card">
+        <summary>
+          <div class="track-info-group">
+            <img src="assets/music-covers/il-rifiuto.jpg" class="track-cover" alt="Il Rifiuto Cover">
+            <div class="track-details">
+              <span class="track-title">Il Rifiuto</span>
+              <span class="track-sub">Original Motion Picture Soundtrack</span>
+            </div>
+          </div>
+          <span class="more-icon">▾</span>
+        </summary>
+        <div class="stream-menu">
+          <!-- Modifica gli URL dentro href="" per ogni piattaforma -->
+          <a href="https://open.spotify.com" target="_blank" class="stream-btn"><span>Spotify</span> <span class="action">Play ↗</span></a>
+          <a href="https://music.apple.com" target="_blank" class="stream-btn"><span>Apple Music</span> <span class="action">Play ↗</span></a>
+          <a href="https://omnicontrast.bandcamp.com" target="_blank" class="stream-btn"><span>Bandcamp</span> <span class="action">Buy ↗</span></a>
+          <a href="https://song.link/ilrifiuto" target="_blank" class="stream-btn"><span>All Platforms</span> <span class="action">Open ↗</span></a>
         </div>
-        <span class="more-icon">▾</span>
-      </summary>
-      <div class="stream-menu">
-        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
-          <span>Spotify</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://music.apple.com" target="_blank" class="stream-btn">
-          <span>Apple Music</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://tidal.com" target="_blank" class="stream-btn">
-          <span>Tidal</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://music.amazon.com" target="_blank" class="stream-btn">
-          <span>Amazon Music</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://song.link/ilrifiuto" target="_blank" class="stream-btn">
-          <span>All Platforms (Song.link)</span> <span class="action">Open ↗</span>
-        </a>
-      </div>
-    </details>
+      </details>
 
-    <!-- DISCOGRAPHY -->
-    <h2 class="section-title">Discography</h2>
 
-    <details class="track-card">
-      <summary>
-        <div class="track-details">
-          <span class="track-title">No Need to Know</span>
-          <span class="track-sub">Single · feat. pearl moth</span>
+      <!-- ================================================================
+           [MODIFICABILE] 3. SEZIONE: DISCOGRAFIA (SINGOLI & ALBUM)
+           ================================================================ -->
+      <h2 class="section-title">Discography</h2>
+
+      <!-- >>> COPIA DA QUI PER AGGIUNGERE UN NUOVO SINGOLO/ALBUM >>> -->
+      <details class="track-card">
+        <summary>
+          <div class="track-info-group">
+            <img src="assets/music-covers/no-need-to-know.jpg" class="track-cover" alt="No Need to Know Cover">
+            <div class="track-details">
+              <span class="track-title">No Need to Know</span>
+              <span class="track-sub">Single · feat. pearl moth</span>
+            </div>
+          </div>
+          <span class="more-icon">▾</span>
+        </summary>
+        <div class="stream-menu">
+          <a href="https://open.spotify.com" target="_blank" class="stream-btn"><span>Spotify</span> <span class="action">Play ↗</span></a>
+          <a href="https://music.apple.com" target="_blank" class="stream-btn"><span>Apple Music</span> <span class="action">Play ↗</span></a>
+          <a href="https://omnicontrast.bandcamp.com" target="_blank" class="stream-btn"><span>Bandcamp</span> <span class="action">Buy ↗</span></a>
+          <a href="https://song.link/noneedtoknow" target="_blank" class="stream-btn"><span>All Platforms</span> <span class="action">Open ↗</span></a>
         </div>
-        <span class="more-icon">▾</span>
-      </summary>
-      <div class="stream-menu">
-        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
-          <span>Spotify</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://music.apple.com" target="_blank" class="stream-btn">
-          <span>Apple Music</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://tidal.com" target="_blank" class="stream-btn">
-          <span>Tidal</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://music.amazon.com" target="_blank" class="stream-btn">
-          <span>Amazon Music</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://song.link/noneedtoknow" target="_blank" class="stream-btn">
-          <span>All Platforms (Song.link)</span> <span class="action">Open ↗</span>
-        </a>
-      </div>
-    </details>
+      </details>
+      <!-- <<< FINE BLOCCO SINGOLO <<< -->
 
-    <!-- SOUNDTRACKS -->
-    <h2 class="section-title">Soundtracks</h2>
 
-    <details class="track-card">
-      <summary>
-        <div class="track-details">
-          <span class="track-title">Everything is Fine</span>
-          <span class="track-sub">Original Motion Picture Soundtrack</span>
+      <!-- ================================================================
+           [MODIFICABILE] 4. SEZIONE: COLONNE SONORE (FILM SCORES)
+           ================================================================ -->
+      <h2 class="section-title">Film Scores & Soundtracks</h2>
+
+      <!-- SOUNDTRACK: EVERYTHING IS FINE -->
+      <details class="track-card">
+        <summary>
+          <div class="track-info-group">
+            <img src="assets/music-covers/everything-is-fine.jpg" class="track-cover" alt="Everything is Fine Cover">
+            <div class="track-details">
+              <span class="track-title">Everything is Fine</span>
+              <span class="track-sub">Original Motion Picture Soundtrack</span>
+            </div>
+          </div>
+          <span class="more-icon">▾</span>
+        </summary>
+        <div class="stream-menu">
+          <a href="https://open.spotify.com" target="_blank" class="stream-btn"><span>Spotify</span> <span class="action">Play ↗</span></a>
+          <a href="https://music.apple.com" target="_blank" class="stream-btn"><span>Apple Music</span> <span class="action">Play ↗</span></a>
+          <a href="https://album.link/everythingisfine" target="_blank" class="stream-btn"><span>All Platforms</span> <span class="action">Open ↗</span></a>
         </div>
-        <span class="more-icon">▾</span>
-      </summary>
-      <div class="stream-menu">
-        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
-          <span>Spotify</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://music.apple.com" target="_blank" class="stream-btn">
-          <span>Apple Music</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://album.link/everythingisfine" target="_blank" class="stream-btn">
-          <span>All Platforms (Album.link)</span> <span class="action">Open ↗</span>
-        </a>
-      </div>
-    </details>
+      </details>
 
-    <details class="track-card">
-      <summary>
-        <div class="track-details">
-          <span class="track-title">Il Rifiuto</span>
-          <span class="track-sub">Original Motion Picture Soundtrack</span>
+      <!-- SOUNDTRACK: LA TEORIA DEL VUOTO -->
+      <details class="track-card">
+        <summary>
+          <div class="track-info-group">
+            <img src="assets/music-covers/la-teoria-del-vuoto.jpg" class="track-cover" alt="La Teoria del Vuoto Cover">
+            <div class="track-details">
+              <span class="track-title">La Teoria del Vuoto</span>
+              <span class="track-sub">Original Motion Picture Soundtrack</span>
+            </div>
+          </div>
+          <span class="more-icon">▾</span>
+        </summary>
+        <div class="stream-menu">
+          <a href="https://open.spotify.com" target="_blank" class="stream-btn"><span>Spotify</span> <span class="action">Play ↗</span></a>
+          <a href="https://music.apple.com" target="_blank" class="stream-btn"><span>Apple Music</span> <span class="action">Play ↗</span></a>
+          <a href="https://album.link/lateoriadelvuoto" target="_blank" class="stream-btn"><span>All Platforms</span> <span class="action">Open ↗</span></a>
         </div>
-        <span class="more-icon">▾</span>
-      </summary>
-      <div class="stream-menu">
-        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
-          <span>Spotify</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://music.apple.com" target="_blank" class="stream-btn">
-          <span>Apple Music</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://song.link/ilrifiuto" target="_blank" class="stream-btn">
-          <span>All Platforms (Song.link)</span> <span class="action">Open ↗</span>
-        </a>
-      </div>
-    </details>
+      </details>
 
-    <details class="track-card">
-      <summary>
+
+      <!-- ================================================================
+           [MODIFICABILE] 5. SEZIONE: STUDIO & CREDITI (LINK DIRETTI)
+           ================================================================ -->
+      <h2 class="section-title">Studio & Credits</h2>
+
+      <!-- LINK DIRETTO: HUB OMNICONTRAST -->
+      <a href="https://omnicontrast.com" class="direct-card" target="_blank">
+        <img src="assets/brand/omnicontrast-logo.jpg" class="track-cover" alt="Omnicontrast Hub">
         <div class="track-details">
-          <span class="track-title">La Teoria del Vuoto</span>
-          <span class="track-sub">Original Motion Picture Soundtrack</span>
+          <span class="track-title">Omnicontrast Official Hub</span>
+          <span class="track-sub">Sound Design Kits & Scoring Services</span>
         </div>
-        <span class="more-icon">▾</span>
-      </summary>
-      <div class="stream-menu">
-        <a href="https://open.spotify.com" target="_blank" class="stream-btn">
-          <span>Spotify</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://music.apple.com" target="_blank" class="stream-btn">
-          <span>Apple Music</span> <span class="action">Play ↗</span>
-        </a>
-        <a href="https://album.link/lateoriadelvuoto" target="_blank" class="stream-btn">
-          <span>All Platforms (Album.link)</span> <span class="action">Open ↗</span>
-        </a>
-      </div>
-    </details>
+      </a>
 
-    <!-- CREDITS & STUDIO -->
-    <h2 class="section-title">Credits & Studio</h2>
+      <!-- LINK DIRETTO: MUSO.AI -->
+      <a href="https://muso.ai" class="direct-card" target="_blank">
+        <img src="assets/brand/muso-logo.jpg" class="track-cover" alt="Muso.ai Profile">
+        <div class="track-details">
+          <span class="track-title">Marco Fabrizi | Muso.ai</span>
+          <span class="track-sub">Verified Studio & Discography Credits</span>
+        </div>
+      </a>
 
-    <a href="https://omnicontrast.com" class="direct-card" target="_blank">
-      <div class="track-details">
-        <span class="track-title">Omnicontrast Official Hub</span>
-        <span class="track-sub">Sound Design & Cinematic Kits</span>
-      </div>
-    </a>
+      <!-- LINK DIRETTO: IMDB -->
+      <a href="https://imdb.com" class="direct-card" target="_blank">
+        <img src="assets/brand/imdb-logo.jpg" class="track-cover" alt="IMDb Profile">
+        <div class="track-details">
+          <span class="track-title">Marco Fabrizi | IMDb</span>
+          <span class="track-sub">Film Scoring & Media Filmography</span>
+        </div>
+      </a>
 
-    <a href="https://muso.ai" class="direct-card" target="_blank">
-      <div class="track-details">
-        <span class="track-title">Marco Fabrizi | Muso.ai</span>
-        <span class="track-sub">Verified Discography Credits</span>
-      </div>
-    </a>
+    </div> <!-- Fine .container -->
 
-    <a href="https://imdb.com" class="direct-card" target="_blank">
-      <div class="track-details">
-        <span class="track-title">Marco Fabrizi | IMDb</span>
-        <span class="track-sub">Film & Media Scoring Filmography</span>
-      </div>
-    </a>
-
-  </div>
+  </div> <!-- Fine #main-content -->
 
 </body>
 </html>
