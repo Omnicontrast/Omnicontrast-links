@@ -51,8 +51,8 @@ html, body {
 .hero-header {
   position: relative;
   width: 100%;
-  padding-top: 320px; /* Spinge il testo in basso per non coprire il volto */
-  padding-bottom: 20px;
+  padding-top: 440px;
+  padding-bottom: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -337,26 +337,28 @@ details[open].featured-card .more-icon {
    ==================================================================== */
 @media (min-width: 768px) {
   .hero-header {
-    height: 820px; /* Estende l'altezza dell'header per creare spazio in basso */
+    height: 90vh; /* Utilizza il 90% dell'altezza dello schermo dell'iPad */
+    min-height: 780px; /* Garantisce una dimensione imponente all'immagine */
     padding-top: 0;
-    padding-bottom: 40px; /* Stacco dal blocco Featured Release */
-    justify-content: flex-end; /* Spinge nome, bio e icone completamente in fondo */
+    padding-bottom: 50px; /* Stacco elegante dal blocco Featured Release */
+    justify-content: flex-end; /* Spinge testo e icone nell'area scura in fondo */
   }
 
   .hero-bg img {
-    object-position: center top; /* Ancora la foto in alto per inquadrare testa e volto completi */
+    object-position: center 10%; /* Inquadra la testa dall'alto mantenendo la vista del volto */
   }
 
   .hero-bg::after {
-    /* Gradient scuro calibrato per coprire il mento e dare massima leggibilità al testo */
+    /* Gradiente scuro rinforzato nella metà inferiore per isolare il testo dal viso */
     background: linear-gradient(
       180deg, 
       rgba(0, 0, 0, 0) 0%, 
-      rgba(0, 0, 0, 0.15) 35%, 
+      rgba(0, 0, 0, 0.1) 30%, 
       rgba(0, 0, 0, 0.85) 65%, 
       #000000 100%
     );
   }
 }
+
 
 
